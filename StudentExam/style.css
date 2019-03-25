@@ -32,7 +32,6 @@ h1 {
 
 h2 {
   font-size: 1.5em;
-  font-style: italic;
 }
 
 h3 {
@@ -108,15 +107,17 @@ nav{
 }
 
 @media screen and (min-width: 600px) and (max-width: 960px){
-  main, nav {
+  main{
     min-height: 45em;
-    background-color: red;
+    background-color:#eeeef3;
   }
 
   nav{
+    min-height: 45em;
     margin-left: 70%;
     width: 27.5%;
     padding: 1.25%;
+    background-color: #ccccd8;
   }
 }
 
@@ -215,7 +216,7 @@ hr {
   border-collapse: collapse;
   border-top: #000044 solid 1px;
   border-right: #000044 solid 1px;
-  padding: 0.5em;
+  padding: 0.5em;bgcolor="#FF0000"
 }
 
 .borderTable th,
@@ -426,7 +427,7 @@ main li.activetab a {
 .col50{
   width: 50%;
 }
-.list-header {
+.thead {
   font-weight: bold;
 }
 

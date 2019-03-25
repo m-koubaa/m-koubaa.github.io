@@ -807,33 +807,36 @@
 
 
 
-            <table ng-hide="IsEmpty"  class="standardTable">
-              <center><h2  ng-hide="IsEmpty">الطالب: {{result.items[0].name}}</h2></center>
+            <table ng-hide="IsEmpty"  class="borderTable">
+              <center><h2  ng-hide="IsEmpty">{{result.items[0].name}}</h2></center>
+              <center><h3  ng-hide="IsEmpty">التخصص : {{result.items[0].topic}}</h3></center>
                         <thead  class="list-header">
-                            <tr>
-                                <th>المقرر</th><th> الحالة</th><th>الشعبة</th><th>التاريخ </th><th>التوقيت</th><th>القاعة</th>
+                            <tr  align="center"  bgcolor="#ccccd8"  font-weight="bold">
+                                <th>القاعة</th><th>التوقيت</th><th>التاريخ </th><th>الشعبة</th><th> الحالة</th><th>المقرر</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="item in result.items">
-                                <td>{{item.exam}}</td><td>{{item.status}}</td><td>{{item.section}}</td>
-                                <td>{{item.date}}</td><td>{{item.time}}</td><td>{{item.room}}</td>
+                            <tr ng-repeat="item in result.items" align="center">
+                                <td>{{item.room}}</td><td>{{item.time}}</td><td>{{item.date}}</td>
+                                <td>{{item.section}}</td><td>{{item.status}}</td><td>{{item.exam}}</td>
+
                             </tr>
                         </tbody>
             </table>
 
     </main>
     <nav>
+      <p align="right">أدخل الرقم الجامعي واصغط على بحث لإظهار جدول الاختبارات</p>
       <form name='myForm'>
-                  <input name='inputMedium' ng-model="actionText"  required />
-                 <button class="button" ng-click="selectExams(actionText)" ng-disabled="myForm.myInput.$invalid">بحث</button>
+                  <button class="button" ng-click="selectExams(actionText)" ng-disabled="myForm.myInput.$invalid">بحث</button>
+                  <input name='myInput' ng-model="actionText"  required />
                  <br>
-                 <span ng-show="myForm.myInput.$invalid"></span>
-                 <span ng-show="IsNotFound"><h3>الرقم الجامعي غير صحيح</h3></span>
+                 <span ng-show="myForm.myInput.$invalid" align="right"><h3>الرقم الجامعي ضرورى*</h3></span>
+                 <span ng-show="IsNotFound" align="right"><h3>الرقم الجامعي غير صحيح</h3></span>
       </form>
     </nav>
     <footer>
-      &copy; Mohamed Koubaa
+      &copy; mkoubaa@su.edu.sa  - 2019 -
     </footer>
     </div>
 </body>
