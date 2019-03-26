@@ -458,3 +458,10 @@ main li.activetab a {
   margin: 0;
   width: 32%;
 }
+
+#fin {
+  position : absolute;
+  bottom : 0px;
+  width: 100%;
+  text-align: center;
+}
