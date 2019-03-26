@@ -99,10 +99,16 @@ nav{
     min-height: 40em;
   }
 
+  main{
+    background-color:#eeeef3;
+  }
+
   nav{
     margin-left: 56em;
     width: 22em;
     padding: 1em;
+    background-color: #ccccd8;
+
   }
 }
 

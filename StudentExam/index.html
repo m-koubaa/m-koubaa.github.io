@@ -802,6 +802,16 @@
     <header>
           <h1>جدول اختبارات موا د الإعداد العام</h1>
     </header>
+    <nav>
+      <p align="right">أدخل الرقم الجامعي ثم اضغط على زر البحث لإظهار جدول الاختبارات</p>
+      <form name='myForm'>
+                  <button class="button" ng-click="selectExams(actionText)" ng-disabled="myForm.myInput.$invalid">بحث</button>
+                  <input name='myInput' ng-model="actionText"  required />
+                 <br>
+                 <span ng-show="myForm.myInput.$invalid" align="right"><h3>الرقم الجامعي ضرورى*</h3></span>
+                 <span ng-show="IsNotFound" align="right"><h3>الرقم الجامعي غير صحيح</h3></span>
+      </form>
+    </nav>
     <main>
 
 
@@ -825,16 +835,6 @@
             </table>
 
     </main>
-    <nav>
-      <p align="right">أدخل الرقم الجامعي واصغط على بحث لإظهار جدول الاختبارات</p>
-      <form name='myForm'>
-                  <button class="button" ng-click="selectExams(actionText)" ng-disabled="myForm.myInput.$invalid">بحث</button>
-                  <input name='myInput' ng-model="actionText"  required />
-                 <br>
-                 <span ng-show="myForm.myInput.$invalid" align="right"><h3>الرقم الجامعي ضرورى*</h3></span>
-                 <span ng-show="IsNotFound" align="right"><h3>الرقم الجامعي غير صحيح</h3></span>
-      </form>
-    </nav>
     <footer>
       &copy; mkoubaa@su.edu.sa  - 2019 -
     </footer>
