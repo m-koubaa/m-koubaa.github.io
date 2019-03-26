@@ -805,23 +805,27 @@
   <body ng-controller="ExamsCtrl">
     <div id="adminWrapper">
     <header>
-          <h1>جدول اختبارات موا د الإعداد العام</h1>
+          <h1>كلية العلوم والآداب بساجر</h1>
     </header>
     <nav>
       <p align="right">أدخل الرقم الجامعي ثم اضغط على زر البحث لإظهار جدول الاختبارات</p>
+
       <form name='myForm'>
                   <button class="button" ng-click="selectExams(actionText)" ng-disabled="myForm.myInput.$invalid">بحث</button>
-                  <input name='myInput' ng-model="actionText"  required />
+                  <input name='myInput' ng-model="actionText"  ng-change="IsNotFound=false" required />
                  <br>
                  <span ng-show="myForm.myInput.$invalid" align="right"><h3>الرقم الجامعي ضرورى*</h3></span>
                  <span ng-show="IsNotFound"  align="right"><h3>الرقم الجامعي غير صحيح</h3></span>
 
       </form>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <p align="center">الفصل الدراسي الثاني</p>
+      <p align="center">١٤٣٩/ ١٤٤٠ هـ</p>
     </nav>
     <main>
 
 
-
+            <h1 align="center" >جدول اختبارات موا د الإعداد العام</h1>
 
             <table ng-hide="IsEmpty"  class="borderTable">
               <center><h2  ng-hide="IsEmpty">{{result[0].name}}</h2></center>
@@ -840,9 +844,13 @@
                         </tbody>
             </table>
 
+            <br><br><br>  
+            <p align="right"> يمنع الدخول لقاعة الاختبار مصحوبا بالجوال -</p>
+            <p align="right"> لا يقبل الطالب لقاعة الاختبار بعد مرور نصف ساعة من بداية الاختبار -</p>
+            <p align="right"> لا يسمح للطالب بالخروج من قاعة الاختببار قبل مرور نصف الساعة من بداية الاختبار -</p>
     </main>
     <footer>
-      &copy; mkoubaa@su.edu.sa  - 2019 -
+      &copy; mkoubaa@su.edu.sa
     </footer>
     </div>
 </body>

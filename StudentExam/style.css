@@ -145,6 +145,11 @@ header > h1{
   margin: 0;
   padding: 0;
 }
+main > h1{
+  color: #000044;
+  margin: 0;
+  padding: 0;
+}
 
 hr {
   background: #000044;

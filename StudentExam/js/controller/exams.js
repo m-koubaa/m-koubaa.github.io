@@ -15,6 +15,11 @@ todoApp.controller("ExamsCtrl", function ($scope, ExamsFactory) {
         //$scope.todo.items.push({ action: actionText, done: false });
       }*/
 
+    /*  $scope.change= function(){
+        console.log("hello");
+        $scope.IsNotFound=false;
+      }*/
+
       $scope.selectExams = function (id) {
                 console.log($scope.todo);
                 $scope.result=[];
