@@ -1,20 +1,32 @@
-todoApp.controller("ExamsCtrl", function ($scope) {
-    $scope.todo = model;
+todoApp.controller("ExamsCtrl", function ($scope, ExamsFactory) {
+    $scope.todo = ExamsFactory.getExams().then(function(){
+              $scope.todo=ExamsFactory.exams;
+              console.log($scope.todo);
+
+
+    }, function(msg){
+      alert(msg);
+    });//model;
+
     $scope.IsEmpty=true;
     $scope.IsNotFound=false;
-    $scope.result={ items : [] };
-    $scope.addNewItem = function (actionText) {
+    $scope.result=[];
+    /*$scope.addNewItem = function (actionText) {
         //$scope.todo.items.push({ action: actionText, done: false });
-      }
+      }*/
 
       $scope.selectExams = function (id) {
-                $scope.result.items=[];
+                console.log($scope.todo);
+                $scope.result=[];
                 $scope.IsEmpty=true;
                 $scope.IsNotFound=true;
 
-                angular.forEach($scope.todo.items, function(value, key){
+                angular.forEach($scope.todo, function(value, key){
+
                       if(value.id===id){
-                            $scope.result.items.push(value);
+                        console.log(value);
+
+                            $scope.result.push(value);
                             $scope.IsEmpty=false;
                           $scope.IsNotFound=false; }
                 });

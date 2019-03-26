@@ -10,10 +10,11 @@
           <link rel="stylesheet" href="style.css">
           <title></title>
           <script src="js/app.js"></script>
+          <script src="js/service/factory.js"></script>
           <script>
 
 
-          var model = {   items: [
+                /*var model = {   items: [
                             {		"index": "1",
                         		"id": "434780095",
                         		"name": " ممدوح بن سلطان بن مزيد الحافي",
@@ -772,11 +773,11 @@
                         	{
                         		"index": ""
                         	}
-                        ]      };
+                        ]      };*/
 
-        //var todoApp = angular.module("MonApp", []);
+                            //var todoApp = angular.module("MonApp", []);
 
-      /*  todoApp.controller("ToDoCtrl", function ($scope) {
+              /*  todoApp.controller("ToDoCtrl", function ($scope) {
             $scope.todo = model;
             $scope.IsEmpty=true;
             $scope.IsNotFound=false;
@@ -798,8 +799,8 @@
                         });
               }
   });*/
-    </script>
-    <script src="js/controller/exams.js"></script>
+          </script>
+          <script src="js/controller/exams.js"></script>
   </head>
   <body ng-controller="ExamsCtrl">
     <div id="adminWrapper">
@@ -813,7 +814,8 @@
                   <input name='myInput' ng-model="actionText"  required />
                  <br>
                  <span ng-show="myForm.myInput.$invalid" align="right"><h3>الرقم الجامعي ضرورى*</h3></span>
-                 <span ng-show="IsNotFound" align="right"><h3>الرقم الجامعي غير صحيح</h3></span>
+                 <span ng-show="IsNotFound"  align="right"><h3>الرقم الجامعي غير صحيح</h3></span>
+
       </form>
     </nav>
     <main>
@@ -822,15 +824,15 @@
 
 
             <table ng-hide="IsEmpty"  class="borderTable">
-              <center><h2  ng-hide="IsEmpty">{{result.items[0].name}}</h2></center>
-              <center><h3  ng-hide="IsEmpty">التخصص : {{result.items[0].topic}}</h3></center>
+              <center><h2  ng-hide="IsEmpty">{{result[0].name}}</h2></center>
+              <center><h3  ng-hide="IsEmpty">التخصص : {{result[0].topic}}</h3></center>
                         <thead  class="list-header">
                             <tr  align="center"  bgcolor="#ccccd8"  font-weight="bold">
                                 <th>القاعة</th><th>التوقيت</th><th>التاريخ </th><th>الشعبة</th><th> الحالة</th><th>المقرر</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="item in result.items" align="center">
+                            <tr ng-repeat="item in result" align="center">
                                 <td>{{item.room}}</td><td>{{item.time}}</td><td>{{item.date}}</td>
                                 <td>{{item.section}}</td><td>{{item.status}}</td><td>{{item.exam}}</td>
 
