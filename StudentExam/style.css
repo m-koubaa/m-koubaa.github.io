@@ -5,7 +5,7 @@ html{
 
 body {
   text-align: left;
-  background-image: url();
+  background-image: url('');
   background-repeat: repeat;
   background-position: top left;
   background-attachment: fixed;
@@ -227,7 +227,8 @@ hr {
   border-collapse: collapse;
   border-top: #000044 solid 1px;
   border-right: #000044 solid 1px;
-  padding: 0.5em;bgcolor="#FF0000"
+  padding: 0.5em;
+  background-color="#FF0000"
 }
 
 .borderTable th,

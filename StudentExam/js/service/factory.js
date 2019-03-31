@@ -9,7 +9,7 @@ todoApp.factory('ExamsFactory', function($http, $q){
                           else{
                                   $http({
                                                method: 'GET',
-                                               url: 'student.json'
+                                               url: 'students_exams.json'
                                               }).then(function successCallback(response){
                                                factory.exams = response.data;
                                                deferred.resolve(factory.exams);

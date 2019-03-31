@@ -805,7 +805,7 @@
   <body ng-controller="ExamsCtrl">
     <div id="adminWrapper">
     <header>
-          <h1>كلية العلوم والآداب بساجر</h1>
+          <h1>كلية العلوم والآداب بساجر</h1>      
     </header>
     <nav>
       <p align="right">أدخل الرقم الجامعي ثم اضغط على زر البحث لإظهار جدول الاختبارات</p>
@@ -827,26 +827,25 @@
     <main>
 
 
-            <h1 align="center" >جدول اختبارات موا د الإعداد العام</h1>
-
+<h1 align="center" >جدول الاختبارات النهائية للفصل الثاني ١٤٣٩/ ١٤٤٠ هـ</h1>
             <table ng-hide="IsEmpty"  class="borderTable">
               <center><h2  ng-hide="IsEmpty">{{result[0].name}}</h2></center>
-              <center><h3  ng-hide="IsEmpty">التخصص : {{result[0].topic}}</h3></center>
+              <center><h3  ng-hide="IsEmpty">التخصص : {{result[0].spec}}</h3></center>
                         <thead  class="list-header">
-                            <tr  align="center"  bgcolor="#ccccd8"  font-weight="bold">
+                            <tr  align="center"  bgcolor="#ccccd8"  font-weight="bold" >
                                 <th>القاعة</th><th>التوقيت</th><th>التاريخ </th><th>الشعبة</th><th> الحالة</th><th>المقرر</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="item in result" align="center">
+                            <tr ng-repeat="item in result | orderBy : 'date' " align="center" style="{{item.status == 'محروم'  || item.status == 'منسحب' ? 'background-color: red' : ''}}">
                                 <td>{{item.room}}</td><td>{{item.time}}</td><td>{{item.date}}</td>
-                                <td>{{item.section}}</td><td>{{item.status}}</td><td>{{item.exam}}</td>
+                                <td>{{item.section}}</td><td>{{item.status}}</td><td>{{item.course}}</td>
 
                             </tr>
                         </tbody>
             </table>
 
-            <br><br><br>
+            <br>
             <p align="right"> يمنع الدخول لقاعة الاختبار مصحوبا بالجوال -</p>
             <p align="right"> لا يقبل الطالب لقاعة الاختبار بعد مرور نصف ساعة من بداية الاختبار -</p>
             <p align="right"> لا يسمح للطالب بالخروج من قاعة الاختببار قبل مرور نصف الساعة من بداية الاختبار -</p>
